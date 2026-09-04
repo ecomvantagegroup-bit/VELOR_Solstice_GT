@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="velor_solstice_gt.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+</Solution>
