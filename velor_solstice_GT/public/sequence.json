@@ -19,11 +19,11 @@
       "description": "Every line has been engineered with purpose."
     },
     {
-      "description": "Power and precision working together.",
-      "endFrame": 2520,
       "id": "performance",
       "startFrame": 901,
-      "title": "Pure performance"
+      "endFrame": 2520,
+      "title": "Pure performance",
+      "description": "Power and precision working together."
     }
   ]
 }

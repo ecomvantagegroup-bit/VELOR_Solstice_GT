@@ -10,27 +10,41 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+// How many frames around the current one to keep warm in memory.
+const PRELOAD_RADIUS = 25
+
+// How many frames to load up front, before the loading screen is dismissed.
+// Keeping this small (rather than all 2500+) means the visitor starts
+// scrubbing in seconds instead of waiting for the whole sequence.
+const INITIAL_BATCH = 60
+
 export default {
   setup() {
     const canvas = ref(null)
 
-    // This is shared with ContentLayer
+    // Shared with ContentLayer and App so the rest of the UI can react
+    // to the same state without duplicating the loading/scroll logic.
     const currentFrame = ref(1)
+    const loadProgress = ref(0)
+    const isReady = ref(false)
+    const hasError = ref(false)
 
     provide('currentFrame', currentFrame)
+    provide('loadProgress', loadProgress)
+    provide('isReady', isReady)
 
-    let ctx = null
+    const prefersReducedMotion =
+      window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches
+
     let config = null
-
     const imageCache = new Map()
-
-    let resizeHandler = null
-
-    const PRELOAD_RADIUS = 25
+    let resizeObserver = null
+    let scrollTween = null
 
     const getFramePath = (frame) => {
       const frameNumber = String(frame).padStart(4, '0')
-
       return `${config.imagePath}${frameNumber}.${config.imageExtension}`
     }
 
@@ -49,7 +63,6 @@ export default {
 
       return new Promise((resolve) => {
         const image = new Image()
-
         image.decoding = 'async'
 
         image.onload = () => {
@@ -69,15 +82,8 @@ export default {
     const preloadFrames = (frame) => {
       if (!config) return
 
-      const start = Math.max(
-        1,
-        frame - PRELOAD_RADIUS
-      )
-
-      const end = Math.min(
-        config.totalFrames,
-        frame + PRELOAD_RADIUS
-      )
+      const start = Math.max(1, frame - PRELOAD_RADIUS)
+      const end = Math.min(config.totalFrames, frame + PRELOAD_RADIUS)
 
       for (let i = start; i <= end; i++) {
         if (!imageCache.has(i)) {
@@ -88,15 +94,11 @@ export default {
 
     const drawFrame = async (frame) => {
       const image = await loadFrame(frame)
+      const canvasEl = canvas.value
 
-      if (
-        !image ||
-        !canvas.value ||
-        !ctx
-      ) {
-        return
-      }
+      if (!image || !canvasEl) return
 
+      const ctx = canvasEl.getContext('2d')
       const width = window.innerWidth
       const height = window.innerHeight
 
@@ -105,171 +107,129 @@ export default {
         height / image.naturalHeight
       )
 
-      const drawWidth =
-        image.naturalWidth * scale
+      const drawWidth = image.naturalWidth * scale
+      const drawHeight = image.naturalHeight * scale
+      const x = (width - drawWidth) / 2
+      const y = (height - drawHeight) / 2
 
-      const drawHeight =
-        image.naturalHeight * scale
-
-      const x =
-        (width - drawWidth) / 2
-
-      const y =
-        (height - drawHeight) / 2
-
-      ctx.clearRect(
-        0,
-        0,
-        canvas.value.width,
-        canvas.value.height
-      )
-
-      ctx.drawImage(
-        image,
-        x,
-        y,
-        drawWidth,
-        drawHeight
-      )
+      ctx.clearRect(0, 0, canvasEl.width, canvasEl.height)
+      ctx.drawImage(image, x, y, drawWidth, drawHeight)
     }
 
     const setFrame = (frame) => {
       frame = Math.round(frame)
 
-      if (
-        frame === currentFrame.value
-      ) {
-        return
-      }
+      if (frame === currentFrame.value) return
 
       currentFrame.value = frame
-
       drawFrame(frame)
       preloadFrames(frame)
     }
 
     const resizeCanvas = () => {
-      if (!canvas.value) return
+      const canvasEl = canvas.value
+      if (!canvasEl) return
 
-      const dpr = Math.min(
-        window.devicePixelRatio || 1,
-        2
-      )
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
 
-      canvas.value.width =
-        window.innerWidth * dpr
+      canvasEl.width = window.innerWidth * dpr
+      canvasEl.height = window.innerHeight * dpr
+      canvasEl.style.width = `${window.innerWidth}px`
+      canvasEl.style.height = `${window.innerHeight}px`
 
-      canvas.value.height =
-        window.innerHeight * dpr
-
-      canvas.value.style.width =
-        `${window.innerWidth}px`
-
-      canvas.value.style.height =
-        `${window.innerHeight}px`
-
-      ctx.setTransform(
-        dpr,
-        0,
-        0,
-        dpr,
-        0,
-        0
-      )
+      const ctx = canvasEl.getContext('2d')
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
 
       drawFrame(currentFrame.value)
-    }
 
-    const createScrollAnimation = () => {
-      const state = {
-        frame: 1,
-      }
-
-      gsap.to(state, {
-        frame: config.totalFrames,
-
-        ease: 'none',
-
-        snap: {
-          frame: 1,
-        },
-
-        scrollTrigger: {
-          trigger: '#scroll-area',
-
-          start: 'top top',
-
-          end: 'bottom bottom',
-
-          scrub: 0.5,
-
-          invalidateOnRefresh: true,
-        },
-
-        onUpdate: () => {
-          setFrame(state.frame)
-        },
-      })
-
+      // Recalculate pin/scroll distances since the viewport changed size.
       ScrollTrigger.refresh()
     }
 
+    const createScrollAnimation = () => {
+      const state = { frame: currentFrame.value }
+
+      scrollTween = gsap.to(state, {
+        frame: config.totalFrames,
+        ease: 'none',
+        snap: { frame: 1 },
+
+        scrollTrigger: {
+          trigger: '#scroll-area',
+          start: 'top top',
+          end: 'bottom bottom',
+          // A reduced-motion visitor still controls the camera with their
+          // own scroll, but we drop the extra smoothing lag (scrub: 0.5)
+          // so nothing moves on its own after the scroll stops.
+          scrub: prefersReducedMotion ? true : 0.5,
+          invalidateOnRefresh: true,
+        },
+
+        onUpdate: () => setFrame(state.frame),
+      })
+    }
+
+    const preloadInitialBatch = async () => {
+      const total = Math.min(INITIAL_BATCH, config.totalFrames)
+      let loaded = 0
+
+      await Promise.all(
+        Array.from({ length: total }, (_, i) => i + 1).map(
+          async (frame) => {
+            await loadFrame(frame)
+            loaded += 1
+            loadProgress.value = Math.round(
+              (loaded / total) * 100
+            )
+          }
+        )
+      )
+    }
+
     const loadConfig = async () => {
-      const response =
-        await fetch('/sequence.json')
+      const response = await fetch('/sequence.json')
 
       if (!response.ok) {
-        throw new Error(
-          'Could not load sequence.json'
-        )
+        throw new Error('Could not load sequence.json')
       }
 
       config = await response.json()
     }
 
     onMounted(async () => {
-      ctx =
-        canvas.value.getContext('2d')
-
-      resizeHandler = resizeCanvas
-
-      window.addEventListener(
-        'resize',
-        resizeHandler
-      )
-
       resizeCanvas()
+
+      resizeObserver = new ResizeObserver(() => resizeCanvas())
+      resizeObserver.observe(document.documentElement)
 
       try {
         await loadConfig()
-
-        await loadFrame(1)
+        await preloadInitialBatch()
 
         drawFrame(1)
-
         preloadFrames(1)
-
         createScrollAnimation()
+
+        isReady.value = true
       } catch (error) {
         console.error(error)
+        hasError.value = true
+        // Fail open: let visitors read the content even if the sequence
+        // can't load, rather than leaving them on a blank screen forever.
+        isReady.value = true
       }
     })
 
     onBeforeUnmount(() => {
-      window.removeEventListener(
-        'resize',
-        resizeHandler
-      )
-
-      ScrollTrigger.getAll().forEach(
-        (trigger) => trigger.kill()
-      )
-
+      resizeObserver?.disconnect()
+      scrollTween?.scrollTrigger?.kill()
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
       imageCache.clear()
     })
 
     return {
       canvas,
+      hasError,
     }
   },
 
@@ -277,15 +237,22 @@ export default {
     return (
       <canvas
         ref="canvas"
+        role="img"
+        aria-label="Cinematic view of the Velor Solstice GT that advances as you scroll"
         class="
-          fixed
+          absolute
           inset-0
           z-0
           block
-          h-screen
-          w-screen
+          h-full
+          w-full
           pointer-events-none
         "
+        style={
+          this.hasError
+            ? { display: 'none' }
+            : undefined
+        }
       />
     )
   },

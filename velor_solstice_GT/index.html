@@ -2,19 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="/favicon.ico" />
+    <!-- Primary SEO -->
+    <title>Velor Solstice GT | The Next Generation of Performance</title>
+    <meta name="description" content="Discover the Velor Solstice GT — a high-performance vehicle engineered for design, precision, and power. Explore the full cinematic experience." />
+    <meta name="keywords" content="Velor Solstice GT, performance car, luxury vehicle, sports car, automotive design" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.velorsolsticegt.com/" />
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Velor Solstice GT | The Next Generation of Performance" />
+    <meta property="og:description" content="Experience the Velor Solstice GT through an interactive, scroll-driven cinematic journey — design, performance, and engineering in motion." />
+    <meta property="og:url" content="https://www.velorsolsticegt.com/" />
+    <meta property="og:image" content="https://www.velorsolsticegt.com/og-image.jpg" />
+    <meta property="og:site_name" content="Velor Solstice GT" />
 
-    <title>Velor Solstice GT</title>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Velor Solstice GT | The Next Generation of Performance" />
+    <meta name="twitter:description" content="An interactive, scroll-driven cinematic experience for the Velor Solstice GT." />
+    <meta name="twitter:image" content="https://www.velorsolsticegt.com/og-image.jpg" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Performance: connect early, preload the first frame so the hero paints fast -->
+    <link rel="preload" as="image" href="/sequence/0001.webp" fetchpriority="high" />
+    <link rel="preload" as="fetch" href="/sequence.json" crossorigin="anonymous" />
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Vehicle",
+          "name": "Velor Solstice GT",
+          "brand": {
+            "@type": "Brand",
+            "name": "Velor"
+          },
+          "description": "Velor Solstice GT — a performance vehicle engineered with precision, power, and design.",
+          "vehicleConfiguration": "GT",
+          "url": "https://www.velorsolsticegt.com/"
+        }
+    </script>
 </head>
-
 <body>
-    <div id="app"></div>
+    <!-- Skip link for keyboard and screen-reader users; the visual experience starts below -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <script type="module"
-            src="/src/main.jsx"></script>
+    <div id="app">
+        <!-- Static, crawlable summary shown before the app hydrates and to non-JS agents.
+             The canvas-driven experience below is decorative and inaccessible to crawlers,
+             so this block carries the real page content for SEO and no-JS visitors. -->
+        <noscript>
+            <main style="padding: 3rem 1.5rem; max-width: 720px; margin: 0 auto; font-family: system-ui, sans-serif; color: #111;">
+                <h1>Velor Solstice GT</h1>
+                <p>Experience the next generation of performance. Every line of the Solstice GT has been engineered with purpose, combining power and precision in a single machine.</p>
+                <h2>Designed to move</h2>
+                <p>The Solstice GT's silhouette blends aerodynamic efficiency with a distinctive presence on the road.</p>
+                <h2>Pure performance</h2>
+                <p>Power and precision working together — enable JavaScript to explore the full interactive experience.</p>
+            </main>
+        </noscript>
+    </div>
+
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
