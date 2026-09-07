@@ -1,0 +1,21 @@
+{
+  "totalFrames": 2520,
+  "imagePath": "/sequence/",
+  "imageExtension": "webp",
+  "sections": [
+    {
+      "id": "hero",
+      "startFrame": 1,
+      "endFrame": 400,
+      "title": "Hero Title",
+      "description": "Hero description"
+    },
+    {
+      "id": "about",
+      "startFrame": 401,
+      "endFrame": 800,
+      "title": "About",
+      "description":"About Section"
+    }
+  ] 
+}
