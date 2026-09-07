@@ -1,0 +1,99 @@
+﻿import { ref, onMounted, onBeforeUnmount } from 'vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
+
+export default {
+  setup() {
+    const canvas = ref(null)
+
+    const frameCount = 300
+
+    let ctx = null
+    let images = []
+    let currentFrame = 0
+    let animation = null
+
+    const drawFrame = (index) => {
+      const image = images[index]
+
+      if (!image || !canvas.value) return
+
+      const width = canvas.value.width
+      const height = canvas.value.height
+
+      const scale = Math.max(
+        width / image.width,
+        height / image.height
+      )
+
+      const imageWidth = image.width * scale
+      const imageHeight = image.height * scale
+
+      const x = (width - imageWidth) / 2
+      const y = (height - imageHeight) / 2
+
+      ctx.clearRect(0, 0, width, height)
+      ctx.drawImage(
+        image,
+        x,
+        y,
+        imageWidth,
+        imageHeight
+      )
+    }
+
+    const resizeCanvas = () => {
+      if (!canvas.value) return 
+
+      canvas.value.width = window.innerWidth
+      canvas.value.height = window.innerHeight
+
+      drawFrame(currentFrame)  
+    }
+
+    const loadImages = () => {
+      let loadedCount = 0
+      for (let i = 0; i < frameCount; i++) {
+        const image = new Image()
+
+        const frameNumber = String(i + 1).padStart(4, '0')
+
+        image.src = `/sequence/frame-${frameNumber}.jpg`
+
+        image.onload = () => {
+          loaded++
+
+          if (loaded === frameCount) {
+            resizeCanvas()
+            createAnimation()
+          }
+        }
+        images[i] = image
+      }
+    }
+
+    const createAnimation = () => {
+      animation = {
+        frame: 0,
+      }
+    }
+
+    gsap.to(animation, {
+      frame: frameCount - 1,
+
+      ease: 'none',
+      snap: 'frame',
+
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: 'top top',
+        end: '+=5000',
+        scrub: true
+      },
+    }
+
+
+  }
+}

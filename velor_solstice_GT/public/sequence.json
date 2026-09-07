@@ -2,20 +2,28 @@
   "totalFrames": 2520,
   "imagePath": "/sequence/",
   "imageExtension": "webp",
-  "sections": [
+
+  "content": [
     {
-      "id": "hero",
+      "id": "intro",
       "startFrame": 1,
-      "endFrame": 400,
-      "title": "Hero Title",
-      "description": "Hero description"
+      "endFrame": 420,
+      "title": "Velor Solstice GT",
+      "description": "Experience the next generation of performance."
     },
     {
-      "id": "about",
-      "startFrame": 401,
-      "endFrame": 800,
-      "title": "About",
-      "description":"About Section"
+      "id": "design",
+      "startFrame": 421,
+      "endFrame": 900,
+      "title": "Designed to move",
+      "description": "Every line has been engineered with purpose."
+    },
+    {
+      "description": "Power and precision working together.",
+      "endFrame": 2520,
+      "id": "performance",
+      "startFrame": 901,
+      "title": "Pure performance"
     }
-  ] 
+  ]
 }

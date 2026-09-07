@@ -1,1 +1,14 @@
-* text=auto eol=lf
+* text=auto eol=crlf
+
+# Enforce CRLF line endings on checkout for text files
+# Binary files should be excluded from conversion (add more as needed)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.gz binary
+*.jar binary
+*.exe binary
+*.dll binary

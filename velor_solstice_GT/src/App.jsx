@@ -1,11 +1,20 @@
-import BackgroundSequence from './components/BackgroundSequence'
+import BackgroundLayer from './components/background_layer'
+import ContentLayer from './components/content_layer'
 
 export default {
   render() {
     return (
-      <div class="relative min-h-screen">
-        <BackgroundSequence />
+      <div
+        id="scroll-area"
+        class="
+          relative
+          min-h-[600vh]
+          bg-transparent
+        "
+      >
+        <BackgroundLayer />
+        <ContentLayer />
       </div>
     )
-  }
+  },
 }
