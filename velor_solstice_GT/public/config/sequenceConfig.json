@@ -1,0 +1,118 @@
+{
+  "sections": [
+    {
+      "name": "hero",
+      "text": "Discover the first experience",
+
+      "audio": {
+        "path": "/sequence/audios/hero.mp3"
+      },
+
+      "images": {
+        "path": "/sequence/Hero/",
+        "start": 1,
+        "end": 480,
+        "extension": ".webp",
+        "pad": 4
+      },
+
+      "scroll": {
+        "pixelsPerFrame": 10,
+        "scrub": true,
+        "pin": true
+      }
+    },
+
+    {
+      "name": "Section Two",
+      "text": "Explore the second experience",
+
+      "audio": {
+        "path": "/sequence/audios/section2.mp3"
+      },
+
+      "images": {
+        "path": "/sequence/section2/",
+        "start": 1,
+        "end": 479,
+        "extension": ".webp",
+        "pad": 4
+      },
+
+      "scroll": {
+        "pixelsPerFrame": 10,
+        "scrub": true,
+        "pin": true
+      }
+    },
+
+    {
+      "name": "Section Three",
+      "text": "Experience the third journey",
+
+      "audio": {
+        "path": "/sequence/audios/section3.mp3"
+      },
+
+      "images": {
+        "path": "/sequence/section3/",
+        "start": 1,
+        "end": 479,
+        "extension": ".webp",
+        "pad": 4
+      },
+
+      "scroll": {
+        "pixelsPerFrame": 10,
+        "scrub": true,
+        "pin": true
+      }
+    },
+
+    {
+      "name": "Section Four",
+      "text": "Continue into the fourth experience",
+
+      "audio": {
+        "path": "/sequence/audios/section4.mp3"
+      },
+
+      "images": {
+        "path": "/sequence/section4/",
+        "start": 1,
+        "end": 480,
+        "extension": ".webp",
+        "pad": 4
+      },
+
+      "scroll": {
+        "pixelsPerFrame": 10,
+        "scrub": true,
+        "pin": true
+      }
+    },
+
+    {
+      "name": "SectionFive",
+      "text": "Discover the final experience",
+
+      "audio": {
+        "path": "/sequence/audios/section5.mp3"
+      },
+
+      "images": {
+        "path": "/sequence/section5/",
+        "start": 1,
+        "end": 600,
+        "extension": ".webp",
+        "pad": 4
+      },
+
+      "scroll": {
+        "pixelsPerFrame": 10,
+        "scrub": true,
+        "pin": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Debug</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        #canvas-wrap {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #debug {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="canvas-wrap">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <pre id="debug">Loading...</pre>
+
+    <script type="module">
+        import { loadImageSequence } from "./src/utils/imageSequence.js";
+        import { createAudioManager } from "./src/utils/audioControl.js";
+
+// Which section to test.
+        const SECTION = "SectionFive";
+
+        const canvas = document.getElementById("canvas");
+        const debug = document.getElementById("debug");
+
+        let sequence = null;
+        let audio = null;
+        let scrollLength = 0;
+        let started = false;
+        let direction = 0;
+        let lastY = 0;
+        let stopTimer = null;
+        let queued = false;
+
+        function log(...args) {
+            console.log("[DEBUG]", ...args);
+        }
+
+
+        // The page only needs enough height to scrub the frames.
+        function setScrollHeight() {
+            const perFrame = sequence.section.scroll?.pixelsPerFrame || 10;
+
+            scrollLength = sequence.totalFrames * perFrame;
+
+            document.body.style.height =
+                `${scrollLength + window.innerHeight}px`;
+        }
+
+
+        function onScroll() {
+            queued = false;
+
+            const y = window.scrollY;
+
+            if (y > lastY) direction = 1;
+            else if (y < lastY) direction = -1;
+
+            lastY = y;
+
+            const progress = Math.max(0, Math.min(1, y / scrollLength));
+
+            sequence.setProgress(progress);
+
+            if (audio && started) {
+                audio.setProgress(progress, direction).catch(log);
+            }
+
+            clearTimeout(stopTimer);
+
+            stopTimer = setTimeout(() => {
+                audio?.pause();
+                direction = 0;
+                render(progress);
+            }, 120);
+
+            render(progress);
+        }
+
+
+        function render(progress) {
+            const state = audio?.getState();
+
+            debug.textContent = [
+                `Section: ${SECTION}`,
+                `Frames: ${sequence.totalFrames}`,
+                `Scroll: ${window.scrollY.toFixed(0)} / ${scrollLength}`,
+                `Progress: ${progress.toFixed(4)}`,
+                `Frame: ${Math.round(progress * (sequence.totalFrames - 1))}`,
+                `Direction: ${direction === 1 ? "DOWN" : direction === -1 ? "UP" : "STOPPED"}`,
+                "",
+                `Audio: ${audio ? "loaded" : "FAILED - images only"}`,
+                `Audio playing: ${state?.isPlaying ?? "-"}`,
+                `Audio playhead: ${state ? state.playhead.toFixed(4) : "-"}`,
+                `Audio duration: ${state?.duration ? state.duration.toFixed(2) + "s" : "-"}`,
+                `Context: ${state?.contextState || "-"}`
+            ].join("\n");
+        }
+
+
+        async function init() {
+            // Images first, and on their own, so a bad audio file can
+            // never stop the sequence from running.
+            sequence = await loadImageSequence(canvas, SECTION);
+
+            log("Images ready:", sequence.totalFrames);
+
+            setScrollHeight();
+            window.addEventListener("resize", setScrollHeight);
+
+            window.addEventListener("scroll", () => {
+                if (queued) return;
+                queued = true;
+                requestAnimationFrame(onScroll);
+            }, { passive: true });
+
+            render(0);
+
+            try {
+                audio = await createAudioManager();
+                await audio.setSection(SECTION, 0);
+                log("Audio ready");
+            } catch (error) {
+                console.error("[DEBUG] Audio failed:", error);
+                debug.textContent = `Audio failed: ${error.message}`;
+            }
+
+            render(0);
+        }
+
+
+        // The AudioContext needs a real gesture; scrolling is not one.
+        for (const type of ["pointerdown", "keydown", "wheel", "touchstart"]) {
+            window.addEventListener(type, async () => {
+                if (!audio || started) return;
+                await audio.resume();
+                started = true;
+            }, { once: true, passive: true });
+        }
+
+        init();
+    </script>
+
+</body>
+
+</html>

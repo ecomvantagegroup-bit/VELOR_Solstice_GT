@@ -16,7 +16,6 @@ export default {
           class="relative min-h-[600vh] bg-[#0a0a0a]"
         >
           <div class="sticky top-0 h-screen w-screen overflow-hidden">
-            <BackgroundLayer />
             <ContentLayer />
           </div>
         </div>
