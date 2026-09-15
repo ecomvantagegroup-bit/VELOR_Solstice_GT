@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-const SEQUENCE_JSON_PATH = "/config/sequenceConfig.json";
+const SEQUENCE_JSON_PATH = `${import.meta.env.BASE_URL}config/sequenceConfig.json`;
 
 export async function loadSequenceConfig() {
   const response = await fetch(SEQUENCE_JSON_PATH);
@@ -45,7 +45,7 @@ async function loadImages(imagesConfig) {
     const frameNumber = String(i).padStart(pad, "0");
 
     imageUrls.push(
-      `${path}${frameNumber}${extension}`
+      `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}${frameNumber}${extension}`
     );
   }
 
@@ -223,7 +223,11 @@ export async function loadImageSequence(
     render,
 
     getAudioPath() {
-      return section.audio?.path ?? null;
+      const path = section.audio?.path;
+
+      if (!path) return null;
+
+      return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
     },
 
     destroy() {

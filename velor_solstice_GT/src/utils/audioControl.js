@@ -1,23 +1,13 @@
-// audioControl.js
-//
-// Scroll-scrubbed audio playback.
-//
-// One audio file per section. Scrolling down plays the buffer
-// forward, scrolling up plays a pre-reversed copy. Playback is
-// only re-seeked when it drifts away from the scroll position,
-// so continuous scrolling does not restart the source on every
-// frame.
 
-const SEQUENCE_JSON_PATH = "/config/sequenceConfig.json";
 
-// How far playback may drift from the scroll position, in
-// seconds, before we re-seek the source.
+
+const SEQUENCE_JSON_PATH = `${import.meta.env.BASE_URL}config/sequenceConfig.json`;
+
 const RESYNC_THRESHOLD = 0.12;
 
-// Gain ramp used on start/stop so seeking does not click.
+
 const FADE = 0.015;
 
-// Progress deltas smaller than this count as "not moving".
 const EPSILON = 0.00001;
 
 let audioContext = null;
@@ -75,9 +65,12 @@ function getSection(sectionName) {
   return section;
 }
 
-
 function clamp01(value) {
   return Math.max(0, Math.min(1, value));
+}
+
+function assetUrl(path) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 }
 
 
@@ -126,13 +119,15 @@ async function loadAudio(sectionName) {
   }
 
   const section = getSection(sectionName);
-  const audioPath = section.audio?.path;
+  const configuredAudioPath = section.audio?.path;
 
-  if (!audioPath) {
+  if (!configuredAudioPath) {
     throw new Error(
       `No audio path configured for section "${sectionName}"`
     );
   }
+
+  const audioPath = assetUrl(configuredAudioPath);
 
   const response = await fetch(audioPath);
 
@@ -140,11 +135,9 @@ async function loadAudio(sectionName) {
     throw new Error(`Failed to load audio: ${audioPath}`);
   }
 
-  const contentType = response.headers.get("content-type") || "";
+  const contentType =
+    response.headers.get("content-type") || "";
 
-  // A dev server with a history fallback answers 200 with
-  // index.html for a missing file, which fails to decode with a
-  // useless "Unable to decode audio data".
   if (contentType.includes("text/html")) {
     throw new Error(
       `${audioPath} returned HTML, not audio. The file is probably missing.`
@@ -162,7 +155,8 @@ async function loadAudio(sectionName) {
   let originalBuffer;
 
   try {
-    originalBuffer = await audioContext.decodeAudioData(arrayBuffer);
+    originalBuffer =
+      await audioContext.decodeAudioData(arrayBuffer);
   } catch (error) {
     throw new Error(
       `Could not decode ${audioPath} (${contentType || "unknown type"}). ` +
@@ -173,7 +167,8 @@ async function loadAudio(sectionName) {
   const audioData = {
     audioPath,
     originalBuffer,
-    reversedBuffer: createReversedBuffer(originalBuffer),
+    reversedBuffer:
+      createReversedBuffer(originalBuffer),
   };
 
   audioCache.set(sectionName, audioData);
