@@ -155,6 +155,7 @@
                     ? "loaded"
                     : "FAILED - images only"
                 }`,
+                `Audio unlocked: ${started}`,
                 `Audio playing: ${state?.isPlaying ?? "-"
                 }`,
                 `Audio playhead: ${state
@@ -222,6 +223,10 @@
                 );
 
                 log("Audio ready");
+
+                // In case a gesture already happened while
+                // audio was still loading, try to unlock now.
+                tryUnlock();
             } catch (error) {
                 console.error(
                     "[DEBUG] Audio failed:",
@@ -238,34 +243,54 @@
         // --------------------------------------------------
         // AudioContext gesture
         // --------------------------------------------------
+        //
+        // NOTE: these listeners must NOT use { once: true }.
+        // If audio hasn't finished loading yet (fetch + decode
+        // over a real network is much slower than localhost),
+        // the very first gesture arrives before `audio` exists,
+        // the handler no-ops, and a `{ once: true }` listener
+        // would then remove itself permanently - meaning no
+        // later gesture could ever unlock the AudioContext.
+        // Instead we keep retrying on every gesture until it
+        // actually succeeds, then remove all of them manually.
 
-        for (const type of [
+        const UNLOCK_EVENTS = [
             "pointerdown",
             "keydown",
             "wheel",
             "touchstart"
-        ]) {
+        ];
+
+        async function tryUnlock() {
+            if (!audio || started) {
+                return;
+            }
+
+            try {
+                await audio.resume();
+                started = true;
+
+                for (const type of UNLOCK_EVENTS) {
+                    window.removeEventListener(
+                        type,
+                        tryUnlock
+                    );
+                }
+
+                log("Audio unlocked");
+            } catch (error) {
+                console.error(
+                    "[DEBUG] Audio resume failed:",
+                    error
+                );
+            }
+        }
+
+        for (const type of UNLOCK_EVENTS) {
             window.addEventListener(
                 type,
-                async () => {
-                    if (!audio || started) {
-                        return;
-                    }
-
-                    try {
-                        await audio.resume();
-                        started = true;
-                    } catch (error) {
-                        console.error(
-                            "[DEBUG] Audio resume failed:",
-                            error
-                        );
-                    }
-                },
-                {
-                    once: true,
-                    passive: true
-                }
+                tryUnlock,
+                { passive: true }
             );
         }
 
