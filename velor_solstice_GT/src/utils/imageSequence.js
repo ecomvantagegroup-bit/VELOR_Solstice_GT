@@ -2,7 +2,9 @@ import gsap from "gsap";
 
 const SEQUENCE_JSON_PATH = `${import.meta.env.BASE_URL}config/sequenceConfig.json`;
 
-export async function loadSequenceConfig() {
+const IMAGE_LOAD_CHUNK_SIZE = 8;
+
+async function loadSequenceConfig() {
   const response = await fetch(SEQUENCE_JSON_PATH);
 
   if (!response.ok) {
@@ -30,6 +32,43 @@ async function getSectionConfig(sectionName) {
   return section;
 }
 
+function loadOneImage(url) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+
+    image.onload = () => resolve(image);
+
+    image.onerror = () =>
+      reject(
+        new Error(
+          `Failed to load image: ${url}`
+        )
+      );
+
+    image.src = url;
+  });
+}
+
+// Loads all urls, but only ever keeps `chunkSize` requests
+// in flight at once. Results stay in the original order.
+async function loadImagesInChunks(urls, chunkSize) {
+  const images = new Array(urls.length);
+
+  for (let start = 0; start < urls.length; start += chunkSize) {
+    const chunk = urls.slice(start, start + chunkSize);
+
+    const loaded = await Promise.all(
+      chunk.map((url) => loadOneImage(url))
+    );
+
+    loaded.forEach((image, offset) => {
+      images[start + offset] = image;
+    });
+  }
+
+  return images;
+}
+
 async function loadImages(imagesConfig) {
   const {
     path,
@@ -49,27 +88,7 @@ async function loadImages(imagesConfig) {
     );
   }
 
-  const images = await Promise.all(
-    imageUrls.map(
-      (url) =>
-        new Promise((resolve, reject) => {
-          const image = new Image();
-
-          image.onload = () => resolve(image);
-
-          image.onerror = () =>
-            reject(
-              new Error(
-                `Failed to load image: ${url}`
-              )
-            );
-
-          image.src = url;
-        })
-    )
-  );
-
-  return images;
+  return loadImagesInChunks(imageUrls, IMAGE_LOAD_CHUNK_SIZE);
 }
 
 export async function loadImageSequence(
@@ -240,4 +259,3 @@ export async function loadImageSequence(
     }
   };
 }
-
