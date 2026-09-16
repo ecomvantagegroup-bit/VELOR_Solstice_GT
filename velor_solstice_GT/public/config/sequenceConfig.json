@@ -11,7 +11,7 @@
       "images": {
         "path": "/sequence/Hero/",
         "start": 1,
-        "end": 480,
+        "end": 200,
         "extension": ".webp",
         "pad": 4
       },
