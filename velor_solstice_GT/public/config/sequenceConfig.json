@@ -34,7 +34,7 @@
       "images": {
         "path": "/sequence/section2/",
         "start": 1,
-        "end": 479,
+        "end": 200,
         "extension": ".webp",
         "pad": 4
       },
@@ -57,7 +57,7 @@
       "images": {
         "path": "/sequence/section3/",
         "start": 1,
-        "end": 479,
+        "end": 200,
         "extension": ".webp",
         "pad": 4
       },
@@ -80,7 +80,7 @@
       "images": {
         "path": "/sequence/section4/",
         "start": 1,
-        "end": 480,
+        "end": 200,
         "extension": ".webp",
         "pad": 4
       },
@@ -103,7 +103,7 @@
       "images": {
         "path": "/sequence/section5/",
         "start": 1,
-        "end": 600,
+        "end": 250,
         "extension": ".webp",
         "pad": 4
       },
