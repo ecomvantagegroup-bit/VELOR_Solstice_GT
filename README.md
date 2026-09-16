@@ -2,27 +2,11 @@
 
 ### Continuous Sequence Automotive Experience
 
-> A high-performance cinematic landing page built around an unbroken **1,200-frame interactive camera path**, allowing visitors to literally scrub through a cinematic automotive film as they scroll.
+**VELOR Solstice GT** is a cinematic automotive landing page built around an unbroken **1,200-frame interactive camera sequence**.
 
----
+Instead of using separate hero animations, video sections, or disconnected transitions, the entire visual experience is driven by one continuous camera journey.
 
-## 💰 Package
-
-### **VELOR Solstice GT — $3,250 USD**
-
-A premium cinematic landing-page experience focused on advanced scroll interaction, continuous image-sequence rendering, and luxury automotive storytelling.
-
----
-
-# 🎯 Concept
-
-VELOR Solstice GT is designed around a simple idea:
-
-> **The user controls the camera.**
-
-Instead of using separate hero animations, video sections, or disconnected transitions, the entire visual experience is driven by one continuous camera sequence.
-
-As the visitor scrolls, the website advances through the cinematic footage frame-by-frame.
+As visitors scroll, they directly control the cinematic camera:
 
 ```text
 USER SCROLL
@@ -31,20 +15,20 @@ SCROLL PROGRESS
      ↓
 FRAME INDEX
      ↓
-CANVAS
+HTML CANVAS
      ↓
 CURRENT CINEMATIC FRAME
 ```
 
-The result is an experience that feels closer to interacting with a digital automotive commercial than navigating a conventional website.
+The result is an immersive experience designed to feel less like a conventional website and more like **an automotive film that the visitor controls**.
 
 ---
 
-# 🎬 Core Experience
+## 🎬 Core Experience
 
-## 1,200-Frame Continuous Sequence
+### 1,200-Frame Continuous Sequence
 
-The project uses approximately **1,200 optimized WebP frames** representing a single continuous camera journey.
+The experience uses approximately **1,200 optimized WebP frames** representing a single continuous camera journey.
 
 ```text
 Frame 001
@@ -68,36 +52,174 @@ Frame 1200
 
 There are no visual breaks between the major cinematic moments.
 
-The visitor scrubs through the entire sequence using the page scroll.
+The visitor scrubs through the entire sequence using page scroll, creating a direct relationship between:
+
+> **Scroll → Camera → Frame → Story**
 
 ---
 
-# 🧭 8 Narrative Chapters
+# 🧭 Narrative Structure
 
-The sequence is organized into **8 cinematic chapters**.
+The landing page is organized into **5 primary content sections**.
 
-```text
-01 — Arrival
-02 — Silhouette
-03 — Design
-04 — Performance
-05 — Motion
-06 — Engineering
-07 — Solstice Story
-08 — Final Reveal
-```
+While the experience contains **8 cinematic chapters internally**, those chapters are grouped into five larger storytelling sections to keep the page structure focused and editorial.
 
-Each chapter can define:
+| Section                            | Cinematic Chapters | Narrative                           |
+| ---------------------------------- | ------------------ | ----------------------------------- |
+| **01 — Hero**                      | Chapter 01         | Arrival                             |
+| **02 — Silhouette / Design**       | Chapters 02–03     | Form, design and visual identity    |
+| **03 — Performance / Engineering** | Chapters 04–06     | Performance, motion and engineering |
+| **04 — Solstice Story**            | Chapter 07         | The story behind the name           |
+| **05 — Final Reveal / CTA**        | Chapter 08         | Final reveal and conversion         |
 
-* Frame range
-* Content overlay
-* Pinning behavior
-* Camera movement
-* Text animation
-* Transition metadata
-* Narrative position
+---
 
-The sequence configuration is maintained separately from the rendering engine.
+# 01 — Hero
+
+### Chapter 01: Arrival
+
+The opening establishes the Solstice GT as a luxury performance vehicle while introducing the cinematic interaction.
+
+**Eyebrow**
+
+> VELOR MOTORS
+
+**Headline**
+
+> SOLSTICE GT
+
+**Subheadline**
+
+> Engineered for the horizon. Built for the moment before it.
+
+The hero introduces the core philosophy of the vehicle and establishes the visual language for the experience.
+
+The camera begins its journey from the first frame, with the visitor gradually revealing the vehicle through scrolling.
+
+---
+
+# 02 — Silhouette / Design
+
+### Chapters 02–03
+
+The second section transitions from arrival into the vehicle's design language.
+
+**Eyebrow**
+
+> FORM FOLLOWS VELOCITY
+
+**Headline**
+
+> A Silhouette Cut From Motion Itself
+
+The section explores the Solstice GT's aerodynamic profile and exterior details while the camera continues through the sequence.
+
+### Design Highlights
+
+* Sculpted carbon-fiber front splitter
+* Frameless side mirrors with integrated turn signals
+* Ultra-thin LED signature lighting
+* 21-inch forged alloy wheels
+* Six signature finishes
+
+### Sample Finishes
+
+* Solstice Copper
+* Obsidian Black
+* Glacier White
+* Storm Grey
+* Racing Green
+* Midnight Blue
+
+The design content appears as an overlay on top of the cinematic canvas, allowing the vehicle to remain visible throughout the narrative.
+
+---
+
+# 03 — Performance / Engineering
+
+### Chapters 04–06
+
+The third section introduces the technical character of the Solstice GT.
+
+**Eyebrow**
+
+> POWER, REFINED
+
+**Headline**
+
+> Precision at Every RPM
+
+The camera sequence transitions into more dynamic movement while supporting content introduces the vehicle's performance and engineering.
+
+### Sample Specifications
+
+| Specification      |               Value |
+| ------------------ | ------------------: |
+| Engine             |  4.0L Twin-Turbo V8 |
+| Power Output       |              630 hp |
+| Torque             |           620 lb-ft |
+| 0–60 mph           |         3.1 seconds |
+| Top Speed          |             205 mph |
+| Transmission       | 8-speed dual-clutch |
+| Drivetrain         |     All-wheel drive |
+| Curb Weight        |           3,860 lbs |
+| Braking (60–0 mph) |               98 ft |
+| Fuel Economy       |     18 mpg combined |
+
+> **Note:** All vehicle specifications are sample data intended for demonstration purposes only and must be verified before production launch.
+
+---
+
+# 04 — Solstice Story
+
+### Chapter 07
+
+The fourth section moves away from specifications and into the philosophy behind the vehicle.
+
+**Eyebrow**
+
+> THE STORY BEHIND THE NAME
+
+**Headline**
+
+> Named for the Longest Light
+
+The section explains the inspiration behind the Solstice name and connects the vehicle to the idea of extending the driving experience.
+
+The camera can enter a locked-off cinematic moment here, allowing the visitor to focus on the editorial storytelling while the vehicle remains composed in the background.
+
+### Pull Quote
+
+> “We didn't want to build a faster car. We wanted to build a car that made you want to drive slower, longer.”
+
+— VELOR Design Lead
+*Sample attribution*
+
+---
+
+# 05 — Final Reveal / CTA
+
+### Chapter 08
+
+The final section completes the camera journey and delivers the primary conversion moment.
+
+**Eyebrow**
+
+> THE SOLSTICE GT AWAITS
+
+**Headline**
+
+> Your Horizon. Your Terms.
+
+The final reveal brings the cinematic sequence to its conclusion while presenting the visitor with clear next steps.
+
+### Primary Actions
+
+* **Configure Your Solstice GT**
+* **Book a Private Test Drive**
+* **Find a Showroom**
+
+The final CTA is positioned as the culmination of the cinematic journey rather than as a conventional website section.
 
 ---
 
@@ -105,64 +227,79 @@ The sequence configuration is maintained separately from the rendering engine.
 
 GSAP ScrollTrigger maps scroll progress directly to the active frame.
 
-The experience intentionally avoids interpolation or excessive easing.
-
 ```text
 SCROLL PROGRESS
 
-0%                              100%
-│--------------------------------│
-001                            1200
+0%                                      100%
+│------------------------------------------│
+001                                      1200
 ```
 
-This creates a direct physical relationship between:
+Conceptually:
 
-**Scroll → Camera → Frame**
+```js
+frameIndex = scrollProgress * (totalFrames - 1)
+```
 
-The user feels as though they are manually controlling the camera.
+The system intentionally minimizes excessive easing and interpolation.
+
+This preserves the feeling that the visitor is physically controlling the camera.
+
+```text
+Scroll
+  ↓
+Camera Position
+  ↓
+Frame
+  ↓
+Story
+```
 
 ---
 
 # 📏 Scroll Architecture
 
-The cinematic sequence uses a total scroll distance of approximately:
-
-### **1120vh**
-
-The scroll position is converted directly into a frame index.
-
-Conceptually:
+The cinematic sequence uses an approximate total scroll distance of:
 
 ```text
-frameIndex =
-  scrollProgress × (totalFrames - 1)
+1120vh
 ```
 
-This keeps the camera movement predictable and frame-accurate.
+The scroll position is normalized and mapped across the complete frame range.
+
+```text
+Page Scroll
+     ↓
+ScrollTrigger
+     ↓
+Normalized Progress
+     ↓
+Frame Index
+     ↓
+Canvas Render
+```
+
+This provides predictable, frame-accurate camera control across the entire page.
 
 ---
 
 # 📌 Dynamic Pinning
 
-VELOR combines two cinematic behaviors.
+VELOR supports both **camera movement** and **locked cinematic moments**.
 
-### Locked-Off Moments
-
-The camera can remain fixed while the user reads the accompanying content.
+### Locked-Off Content
 
 ```text
 SCROLL
   ↓
 CAMERA LOCK
   ↓
-CONTENT
+CONTENT READING
   ↓
 CAMERA LOCK
 ```
 
-### Active Camera Movement
-
-The sequence resumes when the narrative calls for movement.
+### Active Sequence
 
 ```text
 SCROLL
@@ -174,58 +311,74 @@ FRAME PROGRESSION
 CAMERA MOVEMENT
 ```
 
-This creates a rhythm between:
+This creates a deliberate rhythm:
 
-**Storytelling → Camera Movement → Storytelling → Camera Movement**
+```text
+Story
+ ↓
+Movement
+ ↓
+Story
+ ↓
+Movement
+ ↓
+Reveal
+```
+
+The technique prevents the experience from becoming a constant stream of motion while still maintaining a continuous camera path.
 
 ---
 
-# 🧩 Transparent Content Overlays
+# 🧩 Canvas + Content Architecture
 
-The cinematic canvas remains the visual foundation while Vue JSX components are rendered above it.
+The cinematic canvas provides the visual foundation.
+
+Vue JSX components are rendered above the canvas as transparent content overlays.
 
 ```text
-┌─────────────────────────────┐
-│      Content Overlay        │
-│                             │
-│   Hero / Story / Specs      │
-│                             │
-├─────────────────────────────┤
-│                             │
-│     1,200 Frame Canvas      │
-│                             │
-│       VELOR GT              │
-│                             │
-└─────────────────────────────┘
+┌──────────────────────────────────┐
+│                                  │
+│         CONTENT OVERLAY          │
+│                                  │
+│     Hero / Design / Specs        │
+│                                  │
+├──────────────────────────────────┤
+│                                  │
+│        CINEMATIC CANVAS          │
+│                                  │
+│          VELOR SOLSTICE          │
+│                                  │
+└──────────────────────────────────┘
 ```
 
-### Content Sections
+The content layer does not interrupt the underlying sequence.
 
-* Hero
-* Vehicle Story
-* Design
-* Performance
-* Engineering
-* Specifications
-* Solstice Story
-* Final CTA
+This makes it possible to introduce:
 
-The content does not interrupt the underlying cinematic sequence.
+* Editorial copy
+* Technical specifications
+* Design highlights
+* Pull quotes
+* CTAs
+* Navigation
+
+while maintaining the continuous cinematic experience.
 
 ---
 
 # ⚡ Unified Sequence Controller
 
-The core rendering system is:
+The central rendering system is:
 
 ```text
 src/components/ImageSequenceController.jsx
 ```
 
-It manages:
+The controller manages:
 
 * Frame loading
 * Image preloading
+* Frame caching
 * Canvas rendering
 * Current frame tracking
 * Scroll synchronization
@@ -234,23 +387,83 @@ It manages:
 * Sequence boundaries
 * Responsive rendering
 
-The controller acts as the central engine for the entire cinematic experience.
+The controller acts as the single source of truth for the cinematic sequence.
+
+This keeps individual content sections separate from the underlying rendering engine.
 
 ---
 
-# 📦 Preloading Strategy
+# ⚙️ Sequence Configuration
 
-Frame-perfect scrubbing requires the sequence to be prepared before it is needed.
+Sequence metadata is maintained independently in:
 
-The controller uses a preloading strategy to minimize:
+```text
+src/config/page-sequence.json
+```
 
-* Frame drops
-* Loading gaps
-* Image popping
-* Stuttering
-* Delayed frame changes
+The configuration can define:
 
-The objective is to make the canvas feel like a continuous video surface while retaining direct frame-level control.
+* Total frame count
+* Scroll distance
+* Chapter boundaries
+* Frame ranges
+* Pinning behavior
+* Content timing
+* Animation metadata
+* Narrative position
+
+### Example
+
+```json
+{
+  "totalFrames": 1200,
+  "totalScrollDistance": "1120vh",
+  "chapters": [
+    {
+      "id": "arrival",
+      "startFrame": 0,
+      "endFrame": 150
+    },
+    {
+      "id": "silhouette",
+      "startFrame": 151,
+      "endFrame": 300
+    },
+    {
+      "id": "design",
+      "startFrame": 301,
+      "endFrame": 450
+    },
+    {
+      "id": "performance",
+      "startFrame": 451,
+      "endFrame": 600
+    },
+    {
+      "id": "motion",
+      "startFrame": 601,
+      "endFrame": 750
+    },
+    {
+      "id": "engineering",
+      "startFrame": 751,
+      "endFrame": 900
+    },
+    {
+      "id": "solstice-story",
+      "startFrame": 901,
+      "endFrame": 1050
+    },
+    {
+      "id": "final-reveal",
+      "startFrame": 1051,
+      "endFrame": 1199
+    }
+  ]
+}
+```
+
+The eight cinematic chapters can therefore remain available at the sequence level while the interface presents them as five larger narrative sections.
 
 ---
 
@@ -273,22 +486,21 @@ velor-solstice-gt/
 │   ├── components/
 │   │   ├── ImageSequenceController.jsx
 │   │   ├── Hero.jsx
+│   │   ├── Design.jsx
+│   │   ├── Performance.jsx
 │   │   ├── Story.jsx
-│   │   ├── Specs.jsx
+│   │   ├── FinalReveal.jsx
 │   │   └── ...
 │   │
 │   ├── config/
 │   │   └── page-sequence.json
 │   │
 │   ├── sections/
-│   │   ├── Chapter01.jsx
-│   │   ├── Chapter02.jsx
-│   │   ├── Chapter03.jsx
-│   │   ├── Chapter04.jsx
-│   │   ├── Chapter05.jsx
-│   │   ├── Chapter06.jsx
-│   │   ├── Chapter07.jsx
-│   │   └── Chapter08.jsx
+│   │   ├── HeroSection.jsx
+│   │   ├── DesignSection.jsx
+│   │   ├── PerformanceSection.jsx
+│   │   ├── SolsticeStorySection.jsx
+│   │   └── FinalRevealSection.jsx
 │   │
 │   ├── App.jsx
 │   └── main.jsx
@@ -300,130 +512,116 @@ velor-solstice-gt/
 
 ---
 
-# ⚙️ Sequence Configuration
-
-```text
-src/config/page-sequence.json
-```
-
-The configuration defines:
-
-* Total frame count
-* Chapter boundaries
-* Frame ranges
-* Scroll metadata
-* Pinning behavior
-* Animation metadata
-
-Example:
-
-```json
-{
-  "totalFrames": 1200,
-  "totalScrollDistance": "1120vh",
-  "chapters": [
-    {
-      "id": "arrival",
-      "startFrame": 0,
-      "endFrame": 150
-    },
-    {
-      "id": "silhouette",
-      "startFrame": 151,
-      "endFrame": 300
-    },
-    {
-      "id": "design",
-      "startFrame": 301,
-      "endFrame": 450
-    }
-  ]
-}
-```
-
----
-
 # 🛠 Tech Stack
 
-| Technology        | Purpose                    |
-| ----------------- | -------------------------- |
-| **Vue.js 3**      | Application framework      |
-| **JSX**           | Component templating       |
-| **Tailwind CSS**  | Styling                    |
-| **GSAP**          | Animation engine           |
-| **ScrollTrigger** | Scroll synchronization     |
-| **HTML Canvas**   | Frame rendering            |
-| **WebP**          | Optimized cinematic frames |
-| **Vite**          | Build tooling              |
+| Technology        | Purpose                        |
+| ----------------- | ------------------------------ |
+| **Vue.js 3**      | Application framework          |
+| **JSX**           | Component templating           |
+| **Tailwind CSS**  | Styling and responsive layouts |
+| **GSAP**          | Animation engine               |
+| **ScrollTrigger** | Scroll synchronization         |
+| **HTML Canvas**   | Frame rendering                |
+| **WebP**          | Optimized cinematic assets     |
+| **Vite**          | Build tooling                  |
 
 ### JSX Support
+
+The project uses:
 
 ```text
 @vitejs/plugin-vue-jsx
 ```
 
+for JSX-based Vue components.
+
 ---
 
 # 🚀 Performance
 
-The experience is designed around efficient frame rendering.
+Rendering 1,200 frames requires careful resource management.
 
-### Optimization Strategy
+VELOR is designed around:
 
 * Optimized WebP assets
-* Frame preloading
-* Canvas rendering
+* Image preloading
 * Frame caching
-* Direct scroll mapping
+* Canvas rendering
+* Direct scroll-to-frame mapping
 * Minimal DOM animation
 * GPU-friendly compositing
 * Responsive canvas scaling
-* Reduced-motion support
+* Reduced-motion handling
+
+### Rendering Pipeline
+
+```text
+WebP Frames
+     ↓
+Preloading
+     ↓
+Frame Cache
+     ↓
+Canvas
+     ↓
+ScrollTrigger
+     ↓
+Current Frame
+```
+
+The objective is to make the canvas feel like a continuous video surface while retaining frame-level control.
 
 ---
 
 # 📱 Responsive Design
 
-The cinematic experience adapts to:
+The experience is designed for:
 
 * Desktop
 * Laptop
 * Tablet
 * Mobile
 
-The canvas maintains the vehicle's primary visual focal point while content overlays adapt to smaller screens.
+The canvas maintains the vehicle's primary visual focal point while content overlays adapt to the viewport.
 
-Mobile layouts prioritize:
+### Mobile priorities
 
 * Correct vehicle framing
-* Readability
-* Touch interaction
+* Readable typography
+* Touch-friendly interaction
 * Reduced UI density
 * Stable frame rendering
+* Responsive content positioning
+
+The mobile experience prioritizes cinematic composition rather than simply scaling down the desktop interface.
 
 ---
 
 # ♿ Reduced Motion
 
-Users who prefer reduced motion should receive a simplified experience.
+VELOR respects the user's motion preferences through:
+
+```css
+prefers-reduced-motion
+```
+
+When reduced motion is enabled, the continuous camera experience can be simplified or disabled while keeping the content and product information accessible.
 
 ```text
 prefers-reduced-motion
         ↓
-Reduce / disable continuous camera motion
+Reduce / Disable Continuous Motion
         ↓
-Use simplified visual presentation
+Simplified Presentation
         ↓
-Maintain content accessibility
+Accessible Content
 ```
-
-The narrative and product information remain accessible without requiring continuous animation.
 
 ---
 
 # 🎨 Design Direction
 
-## Visual Identity
+### Visual Identity
 
 **Luxury Performance Automotive**
 
@@ -447,72 +645,95 @@ The narrative and product information remain accessible without requiring contin
 
 The UI should stay quiet.
 
-**The camera movement is the primary interface.**
+The vehicle and camera movement are the primary interface.
 
-There should be no unnecessary dashboards, cards, or conventional SaaS components competing with the vehicle.
-
----
-
-# ✨ Signature Interaction
-
-The defining interaction is:
-
-> **Scroll to control the camera.**
-
-Traditional landing page:
-
-```text
-Section
-   ↓
-Animation
-   ↓
-Section
-   ↓
-Animation
-```
-
-VELOR:
-
-```text
-ONE CONTINUOUS CAMERA PATH
-───────────────────────────→
-
-Scroll
-  ↓
-Camera Position
-  ↓
-Frame
-  ↓
-Story
-  ↓
-Camera Position
-  ↓
-Frame
-```
+There should be no unnecessary dashboards, cards, or conventional SaaS components competing with the cinematic experience.
 
 ---
 
-# 🎯 What This Demo Showcases
+# 🧾 Footer Structure
 
-VELOR demonstrates advanced frontend capabilities including:
+The experience concludes with a minimal luxury-oriented footer.
+
+### VELOR
+
+**VELOR Motors**
+
+Luxury performance, engineered without compromise.
+
+### Explore
+
+* Solstice GT
+* Design Philosophy
+* Engineering
+* Showrooms
+* Configurator
+
+### Company
+
+* About VELOR
+* Careers
+* Press
+* Sustainability
+* Contact
+
+### Connect
+
+* Instagram
+* YouTube
+* Newsletter Signup
+
+**Legal**
+
+> © 2026 VELOR Motors. All rights reserved. Specifications shown are sample data for demonstration purposes and subject to change.
+
+**Micro-tagline**
+
+> VELOR — The Horizon, Redefined.
+
+---
+
+# ⚠️ Content Disclaimer
+
+All vehicle copy, specifications, performance figures, pricing, availability, showroom information, and other product details included in this project are **sample/demo content** unless explicitly verified by the client.
+
+Before production launch, all:
+
+* Vehicle specifications
+* Performance figures
+* Availability claims
+* Product details
+* Legal statements
+* Brand information
+* CTA destinations
+
+should be replaced with approved and verified client content.
+
+---
+
+# 🎯 What This Project Demonstrates
+
+VELOR showcases advanced frontend capabilities including:
 
 * Continuous image sequences
-* 1,200-frame canvas rendering
+* 1,200-frame Canvas rendering
 * Scroll-to-frame mapping
 * GSAP ScrollTrigger
-* Dynamic section pinning
+* Dynamic cinematic pinning
 * Cinematic storytelling
 * Vue JSX architecture
 * Canvas-based rendering
 * Image preloading
-* Performance optimization
+* Frame caching
 * Responsive cinematic layouts
+* Performance optimization
+* Reduced-motion accessibility
 
 ---
 
-# 👑 Ideal Client Industries
+# 👑 Ideal Applications
 
-VELOR's architecture can be adapted for:
+The underlying architecture can be adapted for:
 
 * Automotive
 * Luxury vehicles
@@ -525,38 +746,35 @@ VELOR's architecture can be adapted for:
 * Entertainment
 * Product showcases
 
----
-
-# 💰 Pricing
-
-## VELOR Solstice GT
-
-### **$3,250 USD**
-
-Includes the core cinematic landing-page experience:
-
-* 1,200-frame image sequence
-* Continuous scroll-to-frame interaction
-* GSAP ScrollTrigger
-* Canvas rendering
-* 8 narrative chapters
-* Dynamic pinning
-* Transparent content overlays
-* Responsive layout
-* Performance-focused implementation
-
-Custom integrations, CMS functionality, advanced backend systems, or additional pages can be scoped separately.
+The same approach can transform a scroll experience into an interactive cinematic presentation for almost any premium brand.
 
 ---
 
 # 🏁 Experience Goal
 
-VELOR should not feel like a website containing an animation.
+VELOR should **not** feel like a website containing an animation.
 
 It should feel like:
 
-> **An automotive film that the visitor controls.**
+> ## An automotive film that the visitor controls.
 
 The technical implementation exists to create one thing:
 
-### **A seamless cinematic journey from the first scroll to the final reveal.**
+**A seamless cinematic journey from the first scroll to the final reveal.**
+
+---
+
+## License
+
+This project is intended as a showcase/demo experience.
+
+Add the appropriate license if the repository is intended for public distribution.
+
+---
+
+## Credits
+
+**VELOR Solstice GT**
+*Continuous Sequence Automotive Experience*
+
+A frontend experiment exploring scroll-driven storytelling, frame-accurate Canvas rendering, cinematic interaction, and premium automotive digital experiences.
