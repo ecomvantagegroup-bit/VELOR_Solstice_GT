@@ -1,10 +1,6 @@
 import { defineComponent, ref, onMounted } from 'vue';
 import { loadConfig } from './data/content.js';
 
-import Navbar from './components/content_layer/Navbar/Navbar.jsx';
-import BackgroundLayer from './components/background_layer/index.jsx';
-import ContentLayer from './components/content_layer/index.jsx';
-import Footer from './components/site_footer/index.jsx';
 
 export default defineComponent({
   name: 'App',
@@ -41,23 +37,13 @@ export default defineComponent({
 
       return (
         <div class="bg-black">
-          <Navbar />
-
-          {/* The whole cinematic experience: one shared canvas
-              (BackgroundLayer) + one crossfading copy layer
-              (ContentLayer), both driven by cinematicScroll.js.
-              Height starts at the min-h-[600vh] fallback below and
-              is immediately overridden by cinematicScroll's own
-              setScrollAreaHeight() once it knows the real frame
-              counts, same as useSequencePlayer.js used to do
-              per-section. */}
+          
           <div id="scroll-area" class="relative min-h-[600vh] bg-[#0a0a0a]">
             <div class="sticky top-0 h-screen w-screen overflow-hidden">
-              <BackgroundLayer />
-              <ContentLayer />
+             
             </div>
           </div>
-          <Footer />
+          
         </div>
       );
     };
