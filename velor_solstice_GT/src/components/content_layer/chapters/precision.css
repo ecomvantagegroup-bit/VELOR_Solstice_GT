@@ -1,0 +1,18 @@
+.precision-card {
+  position: relative;
+}
+
+.precision-card::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.precision-eyebrow {
+  letter-spacing: 0.16em;
+}

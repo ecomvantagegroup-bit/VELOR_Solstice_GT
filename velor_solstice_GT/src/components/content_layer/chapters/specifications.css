@@ -1,0 +1,29 @@
+.spec-title {
+  letter-spacing: 0.14em;
+}
+
+.spec-table tr {
+  transition: background 0.25s ease;
+}
+
+.spec-table tr:hover {
+  background: rgba(242, 200, 60, 0.05);
+}
+
+.spec-table td {
+  font-variant-numeric: tabular-nums;
+}
+
+.spec-table td:last-child {
+  font-family: var(--font-display);
+}
+
+.spec-highlights li {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.6rem;
+}
+
+.spec-highlights li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}

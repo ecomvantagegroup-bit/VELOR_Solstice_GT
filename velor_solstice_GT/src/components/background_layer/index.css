@@ -1,0 +1,32 @@
+.background-layer {
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* The vignette/grain used to live per-section in SequenceSection.css;
+   with one shared canvas now, it lives once here instead, as a sibling
+   layer drawn on top of the canvas but below content_layer. */
+.background-vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+      120% 90% at 50% 100%,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0) 55%
+    ),
+    radial-gradient(140% 100% at 50% 0%, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 45%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+.background-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+}

@@ -1,0 +1,183 @@
+/* =====================================================================
+   VELOR — design tokens
+   Import this ONCE, before Tailwind's own CSS, in your app entry
+   (e.g. src/main.js: `import './styles/velor-tokens.css'`).
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #050505;
+  --panel: #0d0d0c;
+  --panel-2: #111110;
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --paper: #f5f3ee;
+  --muted: rgba(245, 243, 238, 0.62);
+  --muted-dim: rgba(245, 243, 238, 0.4);
+  --gold: #f2c83c;
+  --gold-deep: #b9862a;
+  --gold-soft: rgba(242, 200, 60, 0.16);
+
+  --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--gold);
+  color: #111;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------
+   Shared buttons — used across Navbar / Hero / FinalReveal.
+   Pair with the existing Tailwind utility classes on the <button>,
+   e.g. class="btn-gold rounded-[14px] px-8 py-4 ..."
+   -------------------------------------------------------------------- */
+
+.btn-gold,
+.btn-outline {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+  will-change: transform;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 70%
+  );
+  transform: translateX(-140%);
+  transition: transform 0.7s ease;
+}
+
+.btn-gold:hover::before {
+  transform: translateX(140%);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 10px 34px -10px rgba(242, 200, 60, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line-strong);
+  color: var(--paper);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--paper);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------
+   Shared "instrument panel" card treatment — used by the glass cards
+   in Silhouette / Precision / Specifications / Story / FinalReveal.
+   -------------------------------------------------------------------- */
+
+.panel-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(13, 13, 12, 0.72), rgba(5, 5, 5, 0.72));
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid var(--line);
+}
+
+.panel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+}
+
+.eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--gold);
+  display: inline-block;
+}

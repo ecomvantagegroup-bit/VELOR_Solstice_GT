@@ -1,0 +1,13 @@
+.loading-mark {
+  animation: velor-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes velor-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}

@@ -8,4 +8,11 @@
     <!-- Folder where production build objects will be placed -->
     <BuildOutputFolder>$(MSBuildProjectDirectory)\dist</BuildOutputFolder>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="src\components\sections\**" />
+    <TypeScriptConfiguration Remove="src\components\sections\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\components\content_layer\Navbar\" />
+  </ItemGroup>
 </Project>

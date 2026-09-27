@@ -1,0 +1,32 @@
+.hero-title {
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 0;
+}
+
+.hero-stat {
+  padding-right: 1.75rem;
+  margin-right: 1.75rem;
+  border-right: 1px solid var(--line);
+}
+
+.hero-stat:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.hero-stat-value {
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  text-shadow: 0 0 24px var(--gold-soft);
+}
+
+.hero-stat-label {
+  letter-spacing: 0.08em;
+}

@@ -1,0 +1,22 @@
+.story-quote {
+  position: relative;
+}
+
+.story-quote-mark {
+  position: absolute;
+  top: -0.4em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.5;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.story-quote-text {
+  position: relative;
+  z-index: 1;
+}
