@@ -1,0 +1,303 @@
+{
+  "navbar": {
+    "brand": "VELOR",
+    "links": [
+      "Models",
+      "Showrooms",
+      "Engineering",
+      "Contact"
+    ],
+    "filter": "Models",
+    "searchPlaceholder": "Search...",
+    "cta": "Reserve Now",
+    "menuLabel": "Menu"
+  },
+  "hero": {
+    "location": "Dubai, UAE",
+    "tagline": "Prime Car Collection by VELOR",
+    "intro": "Engineered for the horizon. Built for the moment before it. Every great drive begins with arrival, and the Solstice GT is yours to own.",
+    "eyebrow": "THE SOLSTICE GT",
+    "headline": "UNLEASH THE POWER",
+    "ctas": [
+      {
+        "label": "Reserve Yours"
+      },
+      {
+        "label": "Talk to Us"
+      }
+    ],
+    "modelInput": {
+      "value": "Solstice GT"
+    }
+  },
+  "silhouette": {
+    "location": "Dubai, UAE",
+    "tagline": "Prime Car Collection by VELOR",
+    "intro": "Shaped in a wind tunnel before it was ever sketched on paper. Every line exists because air demanded it.",
+    "eyebrow": "FORM FOLLOWS VELOCITY",
+    "headline": [
+      "A Silhouette Cut",
+      "From Motion Itself"
+    ],
+    "ctas": [
+      {
+        "label": "Configure Your Solstice"
+      },
+      {
+        "label": "Book a Test Drive"
+      }
+    ],
+    "about": {
+      "eyebrow": "ABOUT VELOR",
+      "text": "Discover the passion and engineering behind VELOR, the makers of luxury performance cars built to make the ordinary drive feel occasional.",
+      "stats": [
+        {
+          "value": 2.5,
+          "decimals": 1,
+          "suffix": "K+",
+          "label": "Cars Delivered"
+        },
+        {
+          "value": 40,
+          "decimals": 0,
+          "suffix": "+",
+          "label": "Showrooms"
+        },
+        {
+          "value": 99,
+          "decimals": 0,
+          "suffix": "%",
+          "label": "Owner Satisfaction"
+        },
+        {
+          "value": 50,
+          "decimals": 0,
+          "suffix": "+",
+          "label": "Weekly Test Drives"
+        }
+      ],
+      "note": "Sculpted carbon-fiber aero, ultra-thin LED signature lights and a fixed rear wing. A shape that looks fast standing still.",
+      "cta": "Learn More"
+    },
+    "models": {
+      "eyebrow": "OUR MODELS",
+      "title": "Our Featured Models",
+      "text": "Available in three signature finishes: Crimson Red, Storm Silver and Cobalt Blue.",
+      "card": {
+        "brand": "VELOR",
+        "name": "Solstice GT"
+      }
+    }
+  },
+  "precision": {
+    "eyebrow": "INTERIOR EXCELLENCE",
+    "title": "HANDCRAFTED LUXURY:",
+    "headline": "Where Performance Meets Bespoke Artistry.",
+    "body": "Step inside a curated cabin of deep black leather, accented by meticulous red stitching, and reached through a dramatic, wide-opening gullwing door. Hexagon-quilted seats, Alcantara surfaces and carbon-fiber trim put you exactly where the drive happens.",
+    "callouts": {
+      "door": "Gullwing Access",
+      "seat": [
+        "Black Leather &",
+        "Bespoke Stitching"
+      ]
+    },
+    "ctas": {
+      "primary": "Configure Your Cabin",
+      "secondary": "Request a View"
+    },
+    "models": {
+      "eyebrow": "OUR MODELS",
+      "title": "Featured Models",
+      "card": {
+        "brand": "VELOR",
+        "name": "Solstice GT"
+      }
+    }
+  },
+  "specifications": {
+    "eyebrow": "PERFORMANCE ENGINEERING",
+    "headline": "Meticulous Precision: Redefining Performance",
+    "frameLabel": "Forged 21-inch alloy · Michelin Pilot Sport 4 S · 265/30 R21",
+    "stats": [
+      {
+        "value": 6,
+        "decimals": 0,
+        "suffix": "+",
+        "accent": true,
+        "label": "PISTON CALIPERS"
+      },
+      {
+        "value": 390,
+        "decimals": 0,
+        "suffix": "mm",
+        "accent": true,
+        "label": "BRAKE DISC DIAMETER"
+      },
+      {
+        "value": 10.2,
+        "decimals": 1,
+        "suffix": "kg",
+        "accent": true,
+        "label": "FORGED WHEEL WEIGHT"
+      },
+      {
+        "value": 20,
+        "decimals": 0,
+        "suffix": "\"",
+        "accent": false,
+        "label": "FRONT WHEEL SIZE"
+      }
+    ],
+    "body": "Every component, from the forged alloys to the massive multi-piston calipers, is optimized for maximum performance. Our engineering philosophy ensures exceptional braking power, reduced unsprung weight, and instant driver feedback.",
+    "cta": "Learn More",
+    "models": {
+      "eyebrow": "OUR MODELS",
+      "title": "Featured Models",
+      "card": {
+        "brand": "VELOR",
+        "name": "Solstice GT"
+      }
+    }
+  },
+  "story": {
+    "location": "Dubai, UAE",
+    "tagline": "Prime Collection by VELOR",
+    "intro": "Named for the longest light. Three years of design, wind-tunnel testing and track validation went into one goal.",
+    "headline": "Discover the passion and engineering behind VELOR, your destination for owning a luxury performance car.",
+    "wordmark": {
+      "top": "VELOR",
+      "bottom": "SOLSTICE GT"
+    },
+    "finishes": [
+      {
+        "name": "Storm Silver",
+        "swatch": "#c4c8ce"
+      },
+      {
+        "name": "Crimson Red",
+        "swatch": "#b3122b"
+      },
+      {
+        "name": "Cobalt Blue",
+        "swatch": "#1d3fd1"
+      }
+    ],
+    "subline": "Built to make the ordinary drive feel occasional.",
+    "stats": [
+      {
+        "value": 2.5,
+        "decimals": 1,
+        "suffix": "K+",
+        "label": "Cars Delivered"
+      },
+      {
+        "value": 40,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Showrooms"
+      },
+      {
+        "value": 99,
+        "decimals": 0,
+        "suffix": "%",
+        "label": "Owner Satisfaction"
+      },
+      {
+        "value": 50,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Weekly Test Drives"
+      }
+    ],
+    "cta": "Learn More",
+    "models": {
+      "eyebrow": "OUR MODELS",
+      "title": "Our Models",
+      "card": {
+        "label": "FEATURED MODEL",
+        "brand": "VELOR",
+        "name": "SOLSTICE GT",
+        "detail": "Solstice GT - 4.0L Twin-Turbo V8, 630 hp, all-wheel drive"
+      }
+    }
+  },
+  "finalReveal": {
+    "headline": "RESERVE NOW",
+    "body": "The Solstice GT is available now at select VELOR showrooms in Crimson Red, Storm Silver and Cobalt Blue, with private test-drive appointments by request.",
+    "ctas": {
+      "primary": "RESERVE YOUR SOLSTICE",
+      "secondary": [
+        "Book a Private Test Drive",
+        "Find a Showroom"
+      ]
+    },
+    "stats": [
+      {
+        "value": 2.5,
+        "decimals": 1,
+        "suffix": "K+",
+        "label": "Cars Delivered"
+      },
+      {
+        "value": 40,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Showrooms"
+      },
+      {
+        "value": 99,
+        "decimals": 0,
+        "suffix": "%",
+        "label": "Owner Satisfaction"
+      },
+      {
+        "value": 50,
+        "decimals": 0,
+        "suffix": "+",
+        "label": "Weekly Test Drives"
+      }
+    ]
+  },
+  "footer": {
+    "brand": "VELOR",
+    "columns": [
+      {
+        "title": "VELOR",
+        "lines": [
+          "VELOR Motors",
+          "Luxury performance, engineered without compromise."
+        ]
+      },
+      {
+        "title": "Explore",
+        "links": [
+          "Solstice GT",
+          "Design Philosophy",
+          "Engineering",
+          "Showrooms",
+          "Configurator"
+        ]
+      },
+      {
+        "title": "Company",
+        "links": [
+          "About VELOR",
+          "Careers",
+          "Press",
+          "Sustainability",
+          "Contact"
+        ]
+      },
+      {
+        "title": "Connect",
+        "links": [
+          "Instagram",
+          "YouTube",
+          "Newsletter Signup"
+        ]
+      }
+    ],
+    "legal": "© 2026 VELOR Motors. All rights reserved. Specifications shown are sample data and subject to change.",
+    "tagline": "VELOR — The Horizon, Redefined."
+  }
+}

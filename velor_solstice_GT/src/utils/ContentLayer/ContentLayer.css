@@ -1,0 +1,27 @@
+/* Layout only: every section stays transparent so the frame-sequence canvas shows through */
+.cl-root {
+  position: relative;
+  background: transparent;
+}
+
+/* pinned area: 100vh of stage + scroll distance for the frame sequence.
+   --cl-scroll is set per section from sequenceConfig.json (frames x pixelsPerFrame). */
+.cl-scroll-area {
+  position: relative;
+  background: transparent;
+  min-height: calc(100vh + var(--cl-scroll, 500vh));
+}
+
+.cl-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cl-block {
+  position: relative;
+  background: transparent;
+}

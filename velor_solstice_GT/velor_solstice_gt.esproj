@@ -12,4 +12,12 @@
     <None Remove="src\components\sections\**" />
     <TypeScriptConfiguration Remove="src\components\sections\**" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\components\Hero\" />
+    <Folder Include="src\components\Navbar\" />
+    <Folder Include="src\components\Footer\" />
+    <Folder Include="src\components\Silhouette\" />
+    <Folder Include="src\utils\ContentLayer\" />
+    <Folder Include="src\utils\sequenceCanvas\" />
+  </ItemGroup>
 </Project>

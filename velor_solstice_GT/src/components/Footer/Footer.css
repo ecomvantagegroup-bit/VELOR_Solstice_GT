@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter+Tight:wght@300;400;500;600&display=swap');
+
+/* ---- base tokens (scoped to this section only) ---- */
+.rx-footer {
+  --rx-accent: #e3f53b;
+  --rx-accent-line: rgba(227, 245, 59, 0.55);
+  --rx-hair: rgba(255, 255, 255, 0.16);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  background: #0a0a0a; /* solid: the footer sits after the last pinned section, so it should
+                           cover the sequence canvas behind it rather than let it show through */
+  -webkit-font-smoothing: antialiased;
+}
+
+  .rx-footer .rx-glass {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .rx-footer .rx-dash {
+    display: inline-block;
+    width: 1.1rem;
+    height: 2px;
+    background: var(--rx-accent);
+  }
+
+  .rx-footer .rx-btn {
+    border: 1px solid var(--rx-accent-line);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+    .rx-footer .rx-btn:hover {
+      background: var(--rx-accent);
+      color: #0a0a0a;
+      border-color: var(--rx-accent);
+    }
+
+      .rx-footer .rx-btn:hover .rx-tile {
+        background: #0a0a0a;
+        color: var(--rx-accent);
+      }
+
+  .rx-footer .rx-tile {
+    background: var(--rx-accent);
+    color: #0a0a0a;
+    display: grid;
+    place-items: center;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .rx-footer .rx-star {
+    background: rgba(255, 255, 255, 0.28);
+    clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%);
+  }
+
+  .rx-footer button:focus-visible, .rx-footer input:focus-visible {
+    outline: 2px solid var(--rx-accent);
+    outline-offset: 2px;
+  }
+
+@media (prefers-reduced-motion: reduce) {
+  .rx-footer * {
+    transition: none !important;
+  }
+}
+
+/* ---- section specific ---- */
+.rx-footer .rx-wordmark {
+  font-size: clamp(4rem, 17vw, 16rem);
+  line-height: 0.85;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.16);
+  user-select: none;
+}
+
+.rx-footer .rx-link {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+  .rx-footer .rx-link:hover {
+    color: var(--rx-accent);
+    transform: translateX(4px);
+  }
+
+.rx-footer .rx-col-title {
+  letter-spacing: 0.18em;
+}

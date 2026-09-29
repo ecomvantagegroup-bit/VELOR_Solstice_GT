@@ -1,0 +1,8 @@
+/* App shell: fully transparent so your frame-sequence canvas / page background shows through */
+.app-root {
+  position: relative;
+  min-height: 100vh;
+  background: transparent;
+  color: #fff;
+  overflow-x: clip; /* clip (not hidden) keeps position: sticky working */
+}
