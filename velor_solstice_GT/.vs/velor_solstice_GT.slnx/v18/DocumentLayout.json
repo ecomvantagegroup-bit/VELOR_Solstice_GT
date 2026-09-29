@@ -42,8 +42,7 @@
               "RelativeToolTip": "src\\components\\LoadingScreen\\LoadingScreen.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-29T14:51:04.643Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T14:51:04.643Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "src\\components\\LoadingScreen\\LoadingScreen.jsx",
               "ViewState": "AgIAAAcAAAAAAAAAAAAkwKMAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-09-29T14:50:23.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T14:50:23.397Z"
             },
             {
               "$type": "Document",
@@ -68,8 +66,7 @@
               "RelativeToolTip": "src\\utils\\preloader.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-09-29T14:48:54.809Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T14:48:54.809Z"
             },
             {
               "$type": "Document",
@@ -79,7 +76,7 @@
               "RelativeDocumentMoniker": "src\\App.jsx",
               "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\App.jsx",
               "RelativeToolTip": "src\\App.jsx",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
               "WhenOpened": "2026-09-29T14:48:14.211Z",
               "EditorCaption": ""
@@ -94,8 +91,7 @@
               "RelativeToolTip": "public\\config\\sequenceConfig.json",
               "ViewState": "AgIAAD4AAAAAAAAAAAAYwEgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-09-29T14:35:38.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-29T14:35:38.685Z"
             }
           ]
         }

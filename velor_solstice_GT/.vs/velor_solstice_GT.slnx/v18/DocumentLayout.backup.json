@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\components\\silhouette\\silhouette.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\components\\silhouette\\silhouette.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\components\\silhouette\\silhouette.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\components\\silhouette\\silhouette.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\utils\\preloader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\utils\\preloader.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\components\\loadingscreen\\loadingscreen.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\components\\loadingscreen\\loadingscreen.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\src\\components\\loadingscreen\\loadingscreen.jsx||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:src\\components\\loadingscreen\\loadingscreen.jsx||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|d:\\vintage_digital\\website\\velor_solstice_gt\\velor_solstice_gt\\public\\config\\sequenceconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{D5321C7C-D334-7693-D4D6-7753DDFA7436}|velor_solstice_gt.esproj|solutionrelative:public\\config\\sequenceconfig.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Silhouette.css",
-              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\Silhouette\\Silhouette.css",
-              "RelativeDocumentMoniker": "src\\components\\Silhouette\\Silhouette.css",
-              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\Silhouette\\Silhouette.css",
-              "RelativeToolTip": "src\\components\\Silhouette\\Silhouette.css",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAQwFwAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "LoadingScreen.css",
+              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\LoadingScreen\\LoadingScreen.css",
+              "RelativeDocumentMoniker": "src\\components\\LoadingScreen\\LoadingScreen.css",
+              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\LoadingScreen\\LoadingScreen.css",
+              "RelativeToolTip": "src\\components\\LoadingScreen\\LoadingScreen.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-09-29T10:36:39.483Z",
+              "WhenOpened": "2026-09-29T14:51:04.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoadingScreen.jsx",
+              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\LoadingScreen\\LoadingScreen.jsx",
+              "RelativeDocumentMoniker": "src\\components\\LoadingScreen\\LoadingScreen.jsx",
+              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\LoadingScreen\\LoadingScreen.jsx",
+              "RelativeToolTip": "src\\components\\LoadingScreen\\LoadingScreen.jsx",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwKMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-09-29T14:50:23.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Silhouette.jsx",
-              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\Silhouette\\Silhouette.jsx",
-              "RelativeDocumentMoniker": "src\\components\\Silhouette\\Silhouette.jsx",
-              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\components\\Silhouette\\Silhouette.jsx",
-              "RelativeToolTip": "src\\components\\Silhouette\\Silhouette.jsx",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAkwJsAAAAAAAAAAAAAAA==",
+              "Title": "preloader.js",
+              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\utils\\preloader.js",
+              "RelativeDocumentMoniker": "src\\utils\\preloader.js",
+              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\utils\\preloader.js",
+              "RelativeToolTip": "src\\utils\\preloader.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-09-29T14:48:54.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.jsx",
+              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\App.jsx",
+              "RelativeDocumentMoniker": "src\\App.jsx",
+              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\src\\App.jsx",
+              "RelativeToolTip": "src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
-              "WhenOpened": "2026-09-29T10:39:29.939Z",
+              "WhenOpened": "2026-09-29T14:48:14.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "sequenceConfig.json",
+              "DocumentMoniker": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\public\\config\\sequenceConfig.json",
+              "RelativeDocumentMoniker": "public\\config\\sequenceConfig.json",
+              "ToolTip": "D:\\vintage_digital\\Website\\VELOR_Solstice_GT\\velor_solstice_GT\\public\\config\\sequenceConfig.json",
+              "RelativeToolTip": "public\\config\\sequenceConfig.json",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAYwEgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-29T14:35:38.685Z",
               "EditorCaption": ""
             }
           ]
