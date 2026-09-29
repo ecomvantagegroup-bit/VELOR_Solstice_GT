@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap');
+
+/* stops the page scrolling underneath while assets load */
+html.ls-lock,
+html.ls-lock body {
+  overflow: hidden !important;
+}
+
+.ls-root {
+  --ls-accent: #e3f53b;
+  --ls-hair: rgba(255, 255, 255, 0.16);
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  clip-path: inset(0% 0% 0% 0%); /* GSAP tweens this on exit */
+}
+
+  .ls-root.ls-leaving {
+    pointer-events: none;
+  }
+
+.ls-inner {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .ls-inner {
+    padding: 3rem 8%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ls-inner {
+    padding: 3rem 14%;
+  }
+}
+
+.ls-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ls-accent);
+}
+
+.ls-dash {
+  display: inline-block;
+  width: 1.1rem;
+  height: 2px;
+  background: var(--ls-accent);
+}
+
+.ls-count {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ls-unit {
+  margin-left: 0.08em;
+  font-size: 0.3em;
+  letter-spacing: 0;
+  vertical-align: top;
+  color: var(--ls-accent);
+}
+
+.ls-track {
+  height: 2px;
+  overflow: hidden;
+  background: var(--ls-hair);
+}
+
+.ls-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--ls-accent);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+/* fixed min-height so the layout doesn't jump when the button appears */
+.ls-foot {
+  display: flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ls-error {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+  .ls-error code {
+    word-break: break-all;
+    color: #fff;
+  }
+
+/* same solid-border button as the section CTAs: 2px in every state, only colours change */
+.ls-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto;
+  padding: 0.75rem 1.25rem;
+  box-sizing: border-box;
+  border: 2px solid var(--ls-accent);
+  border-radius: 0.75rem;
+  background: var(--ls-accent);
+  color: #0a0a0a;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+  .ls-btn:hover {
+    background: transparent;
+    color: var(--ls-accent);
+  }
+
+  .ls-btn:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+.ls-arrow {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ls-root * {
+    transition: none !important;
+  }
+}
