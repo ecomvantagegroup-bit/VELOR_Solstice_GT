@@ -9,6 +9,8 @@ USER SCROLL → SCROLL PROGRESS → FRAME INDEX → CANVAS → CURRENT FRAME
                       └──────────────→ AUDIO POSITION
 ```
 
+> **Demo project:** VELOR is a fictional brand and this is a showcase/demo build. All copy, specifications, statistics and links are sample content.
+
 > **Target display:** this project is built strictly for a **1920 × 1080 horizontal (landscape)** resolution.
 
 ---
@@ -258,7 +260,7 @@ velor-solstice-gt/
 
 ## Content Disclaimer
 
-All vehicle copy, specifications, performance figures, statistics, availability claims, showroom information and CTA destinations are sample/demo content unless verified by the client. Replace them with approved content before production launch.
+This is a demo project. All vehicle copy, specifications, performance figures, statistics, availability claims, showroom information and CTA destinations are sample content for demonstration purposes only. Buttons and links do not lead to real reservations, test drives or showrooms.
 
 ---
 
