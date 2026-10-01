@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/VELOR_Solstice_GT/',
+  base: '/',
 
   plugins: [
     vue(),
